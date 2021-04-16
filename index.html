@@ -3,13 +3,34 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="stili.css">
   </head>
   <body>
-    <form action="https://formsubmit.co/bine.iljas1@gmail.com" method="POST">
-     <input type="text" name="name" required>
-     <input type="email" name="email" required>
-     <button type="submit">Send</button>
-   </form>
+    <h1 align="center"> PRIJAVA NA POPRAVNI IZPIT</h1>
+    <div class="container">
+      <form action="https://formsubmit.co/bine.iljas1@gmail.com" method="POST">
+        <div class="form-group">
+          <label for="firstName"> IME</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="latsName">PRIIMEK</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="massage">Massage</label>
+          <textarea name="massage" id="massage" cols="30" rows="10"></textarea>
+        </div>
+       <button type="submit">Send</button>
+     </form>
+   </div>
 
   </body>
 </html>
