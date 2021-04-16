@@ -1,63 +1,37 @@
 <!DOCTYPE html>
-<html lang="sl" dir="ltr">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
-    <title>O meni</title>
-    <link rel="stylesheet" href="index.css">
+    <title></title>
   </head>
   <body>
-    <table width = "100%">
-      <tr>
-          <td width="15%"></td>
-          <td align = "center">
-            <div class="beli-text">
 
-              <br>
-              <h1>Moje Ime</h1>
-              <h3>Inštruktor cesarkoli</h3>
-              <br>
-              <a href="index.html" class="beli-text rumeno-ozadje" style="text-decoration:none">Domov</a>
-              <a href="bio.html" class="beli-text rumeno-ozadje" style="text-decoration:none">Biografija</a>
-              <a href="kontakt.html" class="beli-text rumeno-ozadje" style="text-decoration:none">Kontakt</a>
-              <hr>
-            </div>
-          </td>
-          <td width="15%"></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td align="center">
-          <table width="100%" id="notranjaTabela">
-            <tr>
-              <td width="70%">
-                <h2 align="center">Profil</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </td>
-              <td>
-                <img src="Slike/person.png" alt="" width="100%">
-                <ul>
-                  <li>Ime Priimek</li>
-                  <li>Naslov</li>
-                  <li>Telefonska</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </td>
-              <td></td>
-            </tr>
-          </table>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </table>
+  <h2>Send e-mail to someone@example.com:</h2>
 
+  <form action="mailto:bine.iljas1@gmail.com" method="post" enctype="text/plain">
+      <input type="submit" value="Send details to embassy" />
+      <input type="hidden" name="button_pressed" value="1" />
+  </form>
+  <a href = "mailto:bine.iljas1@gmail.com?subject = Feedback&body = Message">
+Send Feedback
+</a>
+
+  <?php
+
+  if(isset($_POST['button_pressed']))
+  {
+      $to      = 'bine.iljas1@gmail.com';
+      $subject = 'the subject';
+      $message = 'hello';
+      $headers = 'From: webmaster@example.com' . "\r\n" .
+          'Reply-To: webmaster@example.com' . "\r\n" .
+          'X-Mailer: PHP/' . phpversion();
+
+      mail($to, $subject, $message, $headers);
+
+      echo 'Email Sent.';
+  }
+
+  ?>
   </body>
 </html>
