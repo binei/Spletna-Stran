@@ -5,33 +5,11 @@
     <title></title>
   </head>
   <body>
+    <form action="https://formsubmit.co/bine.iljas1@gmail.com" method="POST">
+     <input type="text" name="name" required>
+     <input type="email" name="email" required>
+     <button type="submit">Send</button>
+   </form>
 
-  <h2>Send e-mail to someone@example.com:</h2>
-
-  <form action="mailto:bine.iljas1@gmail.com" method="post" enctype="text/plain">
-      <input type="submit" value="Send details to embassy" />
-      <input type="hidden" name="button_pressed" value="1" />
-  </form>
-  <a href = "mailto:bine.iljas1@gmail.com?subject = Feedback&body = Message">
-Send Feedback
-</a>
-
-  <?php
-
-  if(isset($_POST['button_pressed']))
-  {
-      $to      = 'bine.iljas1@gmail.com';
-      $subject = 'the subject';
-      $message = 'hello';
-      $headers = 'From: webmaster@example.com' . "\r\n" .
-          'Reply-To: webmaster@example.com' . "\r\n" .
-          'X-Mailer: PHP/' . phpversion();
-
-      mail($to, $subject, $message, $headers);
-
-      echo 'Email Sent.';
-  }
-
-  ?>
   </body>
 </html>
