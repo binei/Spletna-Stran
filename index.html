@@ -51,11 +51,13 @@
         </div>
        <button type="submit">Send</button>
        <button onclick="myfunction" type="button" name="button"> test </button>
+       <button onclick="generatePDF" type="button" name="button"> test2 </button>
         <script type="text/javascript">
           function myfunction(){
             var pdf = new jsPDF();
             pdf.text(0, 0, 'Hello World!');
             var pdfBase64 = pdf.output('datauristring');
+
 
             window.plugin.email.open({
             to: ['bine.iljas1@gmail.com'],
@@ -64,6 +66,15 @@
             isHTML: false,
             attachments: [pdfBase64]
           });
+
+          function generatePDF() {
+            // Choose the element that our invoice is rendered in.
+            const element = document.getElementById("container");
+            // Choose the element and save the PDF for our user.
+            html2pdf()
+              .from(element)
+              .save();
+          }
           }
 
         </script>
