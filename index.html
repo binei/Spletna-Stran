@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="stili.css">
+
   </head>
   <body>
     <h1 align="center"> PRIJAVA NA POPRAVNI IZPIT</h1>
@@ -11,12 +12,12 @@
       <form action="https://formsubmit.co/bine.iljas1@gmail.com" method="POST">
         <div class="form-group">
           <label for="ime"> IME</label>
-          <input type="text" id="firstName" name="firstName" required>
+          <input type="text" id="ime" name="ime" required>
         </div>
 
         <div class="form-group">
           <label for="priimek">PRIIMEK</label>
-          <input type="text" id="lastName" name="lastName" required>
+          <input type="text" id="priimek" name="priimek" required>
         </div>
 
         <div class="form-group">
@@ -34,7 +35,6 @@
             <option value="predmet3">predmet 3</option>
             <option value="predmet4">predmet 4</option>
           </select>
-
         </div>
 
         <div class="form-group">
@@ -50,6 +50,25 @@
 
         </div>
        <button type="submit">Send</button>
+       <button onclick="myfunction" type="button" name="button"> test </button>
+        <script type="text/javascript">
+          function myfunction(){
+            var pdf = new jsPDF();
+            pdf.text(0, 0, 'Hello World!');
+            var pdfBase64 = pdf.output('datauristring');
+
+            window.plugin.email.open({
+            to: ['bine.iljas1@gmail.com'],
+            subject: 'New PDF!',
+            body: 'Hi there, here is that new PDF you wanted!',
+            isHTML: false,
+            attachments: [pdfBase64]
+          });
+          }
+
+        </script>
+
+       </button>
      </form>
    </div>
 
