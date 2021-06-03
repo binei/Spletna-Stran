@@ -26,6 +26,33 @@
         </div>
 
         <div class="form-group">
+          <label for="prijava">ZAPOREDNA PRIJAVA (število opravljanj izpita)</label>
+          <br>
+          <select id="opravljanje" name="opravljanje" required>
+            <option disabled selected value> -- izpit opravljam (prvič, drugič) -- </option>
+            <option value="Učitelj1">1</option>
+            <option value="Učitelj2">2</option>
+            <option value="Učitelj3">3</option>
+            <option value="Učitelj4">4</option>
+            <option value="Učitelj4">več kot 4</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="vrsta">VRSTA IZPITA</label>
+          <br>
+          <select id="vrsta" name="vrsta" required>
+            <option disabled selected value> -- izberite vrsto izpita -- </option>
+            <option value="Učitelj1">popravni</option>
+            <option value="Učitelj2">predmetni</option>
+            <option value="Učitelj3">dopolnilni</option>
+            <option value="Učitelj4">diferencialni</option>
+            <option value="Učitelj4">delni</option>
+          </select>
+
+        </div>
+
+        <div class="form-group">
           <label for="predmet">PREDMET</label>
           <br>
           <select id="predmet" name="predmet" required>
@@ -49,9 +76,45 @@
           </select>
 
         </div>
+
+        <div class="form-group">
+          <label for="letnik">LETNIK</label>
+          <br>
+          <select id="letnik" name="letnik" required>
+            <option disabled selected value> -- izberite letnik -- </option>
+            <option value="Učitelj1">1</option>
+            <option value="Učitelj2">2</option>
+            <option value="Učitelj3">3</option>
+            <option value="Učitelj4">4</option>
+          </select>
+
+        </div>
+
+        <div class="form-group">
+          <label for="program">IZOBRAŽEVALNI PROGRAM</label>
+          <br>
+          <select id="program" name="program" required>
+            <option disabled selected value> -- izberite izobraževalni program -- </option>
+            <option value="program1">Gimnazija</option>
+            <option value="program2">Tehnik računalništva</option>
+            <option value="program3">Trgovec-prodajalec</option>
+            <option value="program4">Avtoserviser</option>
+            <option value="program4">Inštalater strojnih inštalacij</option>
+          </select>
+
+          <div class="form-group">
+            <label for="rok">IZPITNI ROK</label>
+            <br>
+            <select id="rok" name="rok" required>
+              <option disabled selected value> -- izberite izobraževalni program -- </option>
+              <option value="rok1">zimsko</option>
+              <option value="rok2">spomladanski</option>
+              <option value="rok3">poletni</option>
+              <option value="rok4">jesenski</option>
+            </select>
+
+        </div>
        <button type="submit">Send</button>
-       <button onclick="myfunction" type="button" name="button"> test </button>
-       <button onclick="generatePDF" type="button" name="button"> test2 </button>
         <script type="text/javascript">
           function myfunction(){
             var pdf = new jsPDF();
